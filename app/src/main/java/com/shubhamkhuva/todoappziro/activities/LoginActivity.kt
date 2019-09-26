@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.shubhamkhuva.todoappziro.R
 import com.shubhamkhuva.todoappziro.core.login.LoginContract
 import com.shubhamkhuva.todoappziro.core.login.LoginPresenter
+import com.shubhamkhuva.todoappziro.utils.GeneralUtils
 
 class LoginActivity: AppCompatActivity(),View.OnClickListener, LoginContract.View {
     internal lateinit var btnLogin: Button
@@ -28,7 +29,6 @@ class LoginActivity: AppCompatActivity(),View.OnClickListener, LoginContract.Vie
 
     }
     private fun initViews() {
-        Toast.makeText(applicationContext, "Internet Required", Toast.LENGTH_SHORT).show()
         btnLogin = findViewById(R.id.button_login) as Button
         btnLogin.setOnClickListener(this)
         tvRegister = findViewById(R.id.tv_register) as TextView
@@ -60,7 +60,11 @@ class LoginActivity: AppCompatActivity(),View.OnClickListener, LoginContract.Vie
 
     private fun checkLoginDetails() {
         if (!TextUtils.isEmpty(edtEmail.text.toString()) && !TextUtils.isEmpty(edtPassword.text.toString())) {
-            initLogin(edtEmail.text.toString(), edtPassword.text.toString())
+            if(GeneralUtils().isValidEmailId(edtEmail.text.toString())) {
+                initLogin(edtEmail.text.toString(), edtPassword.text.toString())
+            }else {
+                edtEmail.error = "Please enter a valid email"
+            }
         } else {
             if (TextUtils.isEmpty(edtEmail.text.toString())) {
                 edtEmail.error = "Please enter a valid email"
@@ -78,6 +82,7 @@ class LoginActivity: AppCompatActivity(),View.OnClickListener, LoginContract.Vie
 
     override fun onLoginSuccess(message: String) {
         mProgressDialog.dismiss()
+        GeneralUtils().saveToSharedPerfBoolean(this,"login",true);
         Toast.makeText(applicationContext, "Successfully Logged in", Toast.LENGTH_SHORT).show()
         moveHome();
     }

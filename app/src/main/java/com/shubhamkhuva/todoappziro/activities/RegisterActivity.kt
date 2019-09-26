@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.shubhamkhuva.todoappziro.R
 import com.shubhamkhuva.todoappziro.core.registration.RegistrationContract
 import com.shubhamkhuva.todoappziro.core.registration.RegistrationPresenter
+import com.shubhamkhuva.todoappziro.utils.GeneralUtils
 
 class RegisterActivity:AppCompatActivity(),View.OnClickListener, RegistrationContract.View {
 
@@ -59,7 +60,11 @@ class RegisterActivity:AppCompatActivity(),View.OnClickListener, RegistrationCon
 
     private fun checkRegistrationDetails() {
         if (!TextUtils.isEmpty(edtEmail.text.toString()) && !TextUtils.isEmpty(edtPassword.text.toString())) {
-            initLogin(edtEmail.text.toString(), edtPassword.text.toString())
+            if(GeneralUtils().isValidEmailId(edtEmail.text.toString())) {
+                initLogin(edtEmail.text.toString(), edtPassword.text.toString())
+            }else{
+                edtEmail.error = "Please enter a valid email"
+            }
         } else {
             if (TextUtils.isEmpty(edtEmail.text.toString())) {
                 edtEmail.error = "Please enter a valid email"
