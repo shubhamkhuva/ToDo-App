@@ -42,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
         val taskLists = dbHelper?.getResults()
         if(taskLists!!.length()>0) {
             toDoModel.clear()
-            if (taskLists != null) {
+            if (taskLists != null) { 
                 for (i in 0 until taskLists.length()) {
                     toDoModel.add(
                         ToDoModel(
