@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical" android:layout_margin="5dp" android:background="#FFF">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:weightSum="2">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1.4" android:layout_marginLeft="5dp">
+            <TextView
+                    android:text="Create a App"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/todotext" app:fontFamily="sans-serif-medium"
+                    android:textSize="16sp"/>
+            <TextView
+                    android:text="25 September 2019 12:14 AM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/daytime" app:fontFamily="sans-serif-light"/>
+            <TextView
+                    android:text="Mark as Complete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/donetext" android:textColor="#2196F3"
+                    android:visibility="gone"/>
+            <TextView
+                    android:text="Completed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/donetext_true" android:textColor="#009688"
+                    android:visibility="gone"/>
+        </LinearLayout>
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent" android:id="@+id/edittodo" android:layout_weight=".3"
+                android:src="@drawable/ic_edit_black_24dp" android:scaleType="centerInside"/>
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent" android:id="@+id/deletetodo" android:layout_weight=".3"
+                android:src="@drawable/ic_error" android:scaleType="centerInside"/>
+    </LinearLayout>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D3D1D1"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+    />
+</LinearLayout>
