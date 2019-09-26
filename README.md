@@ -1,3 +1,6 @@
 # To Do App
 
-## Model View Presenter
+- Kotlin
+- Firebase Email and Password Authentication
+- Simple UI
+- Model View Presenter
