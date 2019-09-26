@@ -24,7 +24,9 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         dbHelper = DbHelper(this)
+
         recycle_todo.layoutManager = LinearLayoutManager(applicationContext, LinearLayout.VERTICAL, false)
+
         readDatafromDB()
         fab.setOnClickListener { view ->
             ToDoDialog().openAdd(this,"","","","")
