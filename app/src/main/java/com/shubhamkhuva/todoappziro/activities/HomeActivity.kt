@@ -64,7 +64,6 @@ class HomeActivity : AppCompatActivity() {
             emptytodo.visibility = View.VISIBLE
         }
     }
-
     fun deleteToDo(notes:String){
         dbHelper?.deleteTask(notes)
         readDatafromDB()
