@@ -8,6 +8,6 @@ Android	architecture and Components:
 
 ###### Demo
 
-Welcome                    |  Main Screen
+Login                    |  Main Screen
 :-------------------------:|:-------------------------:
-![](https://github.com/shubhamkhuva/weatherApp/blob/master/screenshot/login.jpg)  |  ![](https://github.com/shubhamkhuva/weatherApp/blob/master/screenshot/home2.jpg)
+![](https://github.com/shubhamkhuva/ToDo-App/blob/master/screenshot/login.jpg)  |  ![](https://github.com/shubhamkhuva/ToDo-App/blob/master/screenshot/home2.jpg)
