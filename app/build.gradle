@@ -9,7 +9,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion "29.0.0"
     defaultConfig {
-        applicationId "com.shubhamkhuva.todoappziro"
+        applicationId "com.shubhamkhuva.todoapp"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
